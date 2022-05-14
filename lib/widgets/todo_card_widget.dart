@@ -98,18 +98,23 @@ class TodoCardWidget extends StatelessWidget {
                         ),
                       ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    subtitle,
-                    style: const TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.w500),
-                  ),
-                  const Icon(
-                    Icons.keyboard_arrow_right_outlined,
-                  )
-                ],
+              InkWell(
+                onTap: () {
+                  debugPrint('todo something');
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      subtitle,
+                      style: const TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.w500),
+                    ),
+                    const Icon(
+                      Icons.keyboard_arrow_right_outlined,
+                    )
+                  ],
+                ),
               ),
             ],
             mainAxisAlignment: MainAxisAlignment.center,
