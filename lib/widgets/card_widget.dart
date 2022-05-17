@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,21 +17,40 @@ class ListCardWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Container(
-        color: isMin ? Colors.grey.withOpacity(0.9) : Colors.white,
-        child: Row(
-          children: Days.allDays
-              .map((day) => CardWidget(
-                  isMin: isMin,
-                  isOrange: day.isOrange,
-                  isBlue: day.isBlue,
-                  isToday: day.isToday,
-                  day: day.day,
-                  month: day.month,
-                  number: day.number))
-              .toList(),
-        ),
-      ),
+      child: isMin
+          ? BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+              child: Container(
+                color: Colors.transparent,
+                child: Row(
+                  children: Days.allDays
+                      .map((day) => CardWidget(
+                          isMin: isMin,
+                          isOrange: day.isOrange,
+                          isBlue: day.isBlue,
+                          isToday: day.isToday,
+                          day: day.day,
+                          month: day.month,
+                          number: day.number))
+                      .toList(),
+                ),
+              ),
+            )
+          : Container(
+              color: Colors.white,
+              child: Row(
+                children: Days.allDays
+                    .map((day) => CardWidget(
+                        isMin: isMin,
+                        isOrange: day.isOrange,
+                        isBlue: day.isBlue,
+                        isToday: day.isToday,
+                        day: day.day,
+                        month: day.month,
+                        number: day.number))
+                    .toList(),
+              ),
+            ),
     );
   }
 }

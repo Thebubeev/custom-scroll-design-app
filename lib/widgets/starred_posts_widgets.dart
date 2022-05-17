@@ -8,19 +8,23 @@ class ListStarredPostsWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Padding(
-        padding:
-            const EdgeInsets.only(left: 10, right: 10, bottom: 12, top: 14),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(
-            "Starred posts",
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
-                color: Colors.grey[700]),
-          ),
-          const StarredPostsWidgets(),
-        ]),
+      child: Container(
+        color: Colors.white,
+        child: Padding(
+          padding:
+              const EdgeInsets.only(left: 10, right: 10, bottom: 12, top: 14),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(
+              "Starred posts",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.grey[700]),
+            ),
+            const StarredPostsWidgets(),
+          ]),
+        ),
       ),
     );
   }

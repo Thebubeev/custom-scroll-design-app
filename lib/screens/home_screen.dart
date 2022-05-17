@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import '../widgets/card_widget.dart';
@@ -52,9 +54,17 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: controller,
         slivers: [
           SliverAppBar(
+            flexibleSpace: isMin
+                ? FlexibleSpaceBar(
+                    background: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+                    child: Container(
+                      color: Colors.transparent,
+                    ),
+                  ))
+                : Container(),
+            backgroundColor: isMin ? Colors.transparent : Colors.white,
             elevation: 0,
-            backgroundColor:
-                isMin ? Colors.grey.withOpacity(0.9) : Colors.white,
             pinned: true,
             title: const Text(
               'My Availability',

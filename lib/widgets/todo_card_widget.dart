@@ -8,28 +8,31 @@ class ListTodoCardWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 10),
-        child: SizedBox(
-          height: 140,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: const [
-              TodoCardWidget(
-                  isProgressBar: true,
-                  title:
-                      'Complete your profile tooptimize your exposure in job searches.',
-                  subtitle: 'Complete profile'),
-              TodoCardWidget(
-                  isProgressBar: false,
-                  title:
-                      'Connect with people you might know and extend your network.',
-                  subtitle: 'Connect'),
-              TodoCardWidget(
-                  isProgressBar: false,
-                  title: 'Get verified as an industry professional.',
-                  subtitle: 'Get verified')
-            ],
+      child: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: SizedBox(
+            height: 140,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: const [
+                TodoCardWidget(
+                    isProgressBar: true,
+                    title:
+                        'Complete your profile tooptimize your exposure in job searches.',
+                    subtitle: 'Complete profile'),
+                TodoCardWidget(
+                    isProgressBar: false,
+                    title:
+                        'Connect with people you might know and extend your network.',
+                    subtitle: 'Connect'),
+                TodoCardWidget(
+                    isProgressBar: false,
+                    title: 'Get verified as an industry professional.',
+                    subtitle: 'Get verified')
+              ],
+            ),
           ),
         ),
       ),

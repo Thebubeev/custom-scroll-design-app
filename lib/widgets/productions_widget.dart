@@ -7,35 +7,39 @@ class ListProductionsWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Padding(
-        padding:
-            const EdgeInsets.only(left: 10, right: 10, bottom: 12, top: 14),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const SizedBox(
-            height: 12,
-          ),
-          Text(
-            "Today's productions",
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
-                color: Colors.grey[700]),
-          ),
-          const SizedBox(
-            height: 6,
-          ),
-          albomCard(
-            'assets/images/Albom1.png',
-            'Production Name That is Long             ',
-            'Sweden  Jan 14, 2022 - Feb 23, 2023',
-          ),
-          albomCard(
-            'assets/images/Albom2.png',
-            'What has bee seen very very long te...',
-            'Sweden  Jan 14, 2022 - Feb 23, 2023',
-          ),
-          coloredCard()
-        ]),
+      child: Container(
+        color: Colors.white,
+        child: Padding(
+          padding:
+              const EdgeInsets.only(left: 10, right: 10, bottom: 12, top: 14),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const SizedBox(
+              height: 12,
+            ),
+            Text(
+              "Today's productions",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.grey[700]),
+            ),
+            const SizedBox(
+              height: 6,
+            ),
+            albomCard(
+              'assets/images/Albom1.png',
+              'Production Name That is Long             ',
+              'Sweden  Jan 14, 2022 - Feb 23, 2023',
+            ),
+            albomCard(
+              'assets/images/Albom2.png',
+              'What has bee seen very very long te...',
+              'Sweden  Jan 14, 2022 - Feb 23, 2023',
+            ),
+            coloredCard()
+          ]),
+        ),
       ),
     );
   }
@@ -87,7 +91,7 @@ class ListProductionsWidgets extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 5,
+                  left: 10,
                   bottom: 10,
                   top: 10,
                 ),
